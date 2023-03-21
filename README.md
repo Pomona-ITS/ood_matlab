@@ -1,4 +1,4 @@
-# Batch Connect - Pomona Colelge MATLAB
+# Batch Connect - Pomona College MATLAB
 
 A Batch Connect app designed for Pomona Colelge OnDemand that launches MATLAB.
 
