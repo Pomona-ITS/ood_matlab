@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+# Clean the environment
+module purge
+
+# Set working directory to home directory
+cd "${HOME}"
+
+#xfce
+source "<%= session.staged_root.join("desktops", "#{context.desktop}.sh") %>" 
+#
+# Start MATLAB
+#
+
+module load matlab/<%= context.pom_matlab_versions %>
+
+<%- if context.pom_num_gpus.to_i >= 1 -%>
+module list
+set -x
+vglrun matlab -desktop -nosoftwareopengl
+<%- else -%>
+module list
+set -x
+matlab -desktop
+<%- end -%>
